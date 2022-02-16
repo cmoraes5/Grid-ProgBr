@@ -1,0 +1,135 @@
+/* 
+OBS: É possível e em alguns casos 
+recomendado utilizar ambos os tipos 
+de display, flex e grid, tendo um 
+container dentro do outro 
+*/
+
+body{
+    background-color: #222;
+}
+
+.container{
+    height: 95vh;
+    width: 95vw;
+
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    padding: 10px;
+    background-color: #555;
+    border-radius: 2rem;
+
+    display: grid; /* Define o display como GRID */ 
+
+    /* grid-template ==> Definimos q quantia de linhas e colunas de acordo com o número de vezes que escrevemos */
+
+    /* grid-template-rows: auto auto; Define no template de linhas, quantas linhas e o tamanho delas */
+    /* Uma possibilidade de unidade de medida tbm é a "%" que pegará ..%(tanto por cento) do tamanho total */
+
+    /* grid-template-columns: auto auto auto; Define no template de colunas, quantas colunas e o tamanho delas */
+
+    /* grid-template: auto auto / auto auto auto;  */
+    /* Grid-Template "inline" ==> Primeiro passamos as linhas e depois separadopor uma / nós passamos as colunas */
+    /* fr ==> é uma unidade de medida exclusiva do grid */
+
+    /* grid-row-gap: 2rem; ==> Cria uma distância entre as linhas */
+    /* grid-column-gap: 10px; ==> Cria uma distância entre as colunas */
+    grid-gap: 10px; /* ==> Cria uma mesma distância tanto para linhas quanto para colunas */
+
+    /* justify-items: center; ==> Propiedade que funciona somente no Grid --> Alinha os elementos na horizontal */
+    /* align-items: center; --> Alinha os elementos na vertical */
+
+/* 
+    justify-content: space-evenly;
+    align-content: space-around; 
+*/
+
+    /* 
+    OBS: Caso justify-items, justify-content e align-item,  align-content --> Contenham 
+    os mesmos valores, não irá mudar praticamente em nada, 
+    ja que com o items ajustamos os elementos às counas e linhas
+    e no content é o contrário, ajustamos as colunas e 
+    linhas em relação aos elementos
+    */
+
+    grid-template-areas:    "a1 a1 a1 a1 a1 a1"
+                            "a2 a2 a3 a3 a3 a3"
+                            "a2 a2 a3 a3 a3 a3"
+                            "a2 a2 a3 a3 a3 a3"
+                            "a4 a4 a4 a5 a5 a5"
+                            "a4 a4 a4 a6 a6 a6";
+
+    box-shadow: 4px 4px 15px rgb(0, 0, 0);
+}
+
+/* 
+    OBS ====================> Grid-Template-Area <====================:
+    - Ferramenta poderosa
+    - Não pode usar em L
+    - Cada linha representará uma linha 
+    - Cada coluna representará uma coluna
+    - Nenhuma área pode ficar de fora
+    - Aqui não importa a ordem no HTML
+*/
+
+.r1{
+    background-color: #ff0055;
+    transition: all .3s;
+}
+.r2{
+    background-color: #5900ff;
+    transition: all .3s;
+}
+.r3{
+    background-color: #47ff2f;
+    transition: all .3s;
+}
+
+.r1:hover{box-shadow: 2px 2px 15px #ff0055;}
+.r2:hover{box-shadow: 2px 2px 15px #5900ff;}
+.r3:hover{box-shadow: 2px 2px 15px #47ff2f;}
+
+.rect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* width: 100px;
+    height: 100px; */
+
+    border-radius: 2rem;
+
+    font-size: 2rem;
+
+    box-shadow: 2px 2px 10px #111;
+
+    cursor: pointer;
+}
+
+.item1{
+    grid-area: a1;
+}
+.item2{
+    grid-area: a2;
+}
+.item3{
+    grid-area: a3;
+}
+.item4{
+    grid-area: a4;
+}
+.item5{
+    grid-area: a5;
+}
+.item6{
+    grid-area: a6;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
