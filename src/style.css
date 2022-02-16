@@ -89,6 +89,10 @@ body{
     transition: all .3s;
 }
 
+.r1:active{transform: rotateY(180deg);}
+.r2:active{transform: rotateY(180deg);}
+.r3:active{transform: rotateY(180deg);}
+
 .r1:hover{box-shadow: 2px 2px 15px #ff0055;}
 .r2:hover{box-shadow: 2px 2px 15px #5900ff;}
 .r3:hover{box-shadow: 2px 2px 15px #47ff2f;}
