@@ -1,8 +1,14 @@
 /* 
-OBS: É possível e em alguns casos 
-recomendado utilizar ambos os tipos 
-de display, flex e grid, tendo um 
-container dentro do outro 
+Recriando o mesmo layout 
+da página principal, porém 
+de uma maneira diferente 
+utilizando:
+Grid-Template,      ===> Define a quantidade de linhas, colunas e os tamanhos
+Grid-Column-Start   ---> Define a posição INICIAL do elemento em relação a COLUNA
+Grid-Column-End,    ===> Define a posição FINAL do elemento em relação a COLUNA
+Grid-Row-Start,     ---> Define a posição INICIAL do elemento em relação a LINHA
+Grid-Row-End        ===> Define a posição FINAL do elemento em relação a LINHA
+e o span            ---> Preenche as posições dos elementos até o início de certa linha/coluna
 */
 
 body{
@@ -66,17 +72,29 @@ body{
 .item1{
     grid-column-start: 1;
     grid-column-end: 7;
+
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 .item2{
     grid-column-start: 1;
     grid-column-end: 3;
+
+    grid-row-start: 2;
+    grid-row-end: 5;
 }
 .item3{
+    grid-column-start: 3;
     grid-column-end: span 4;
+
+    grid-row-start: 2;
+    grid-row-end: 5;
 }
 .item4{
     grid-column-end: span 3;
-    grid-row-end: span 6;
+
+    grid-row-start: 5;
+    grid-row-end: 7;
 }
 .item5{
     grid-column-start: 4;
@@ -86,7 +104,7 @@ body{
     grid-column-start: 4;
     grid-column-end: 7;
     
-    grid-row-start: 5;
+    grid-row-start: 6;
     grid-row-end: 7;
 }
 
